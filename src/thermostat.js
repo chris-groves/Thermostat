@@ -27,3 +27,7 @@ Thermostat.prototype.powerSavingModeOn = function() {
   }
     return "No";
 };
+
+Thermostat.prototype.switchPowerSavingModeOff = function() {
+  this.powerSavingMode = false;
+};
