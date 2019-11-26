@@ -12,5 +12,9 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
+  it('can increase in temperature', function() {
+    thermostat.Up();
+    expect(thermostat.getCurrentTemperature()).toEqual(21);
+  });
 
 });
