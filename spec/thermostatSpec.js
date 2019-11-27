@@ -40,8 +40,16 @@ describe('Thermostat', function() {
   });
 
   it('can switch on power saving mode', function() {
+    thermostat.switchPowerSavingModeOff();
     thermostat.switchPowerSavingModeOn();
     expect(thermostat.powerSavingModeOn()).toEqual("Yes");
+  });
+
+  it('has a maximum temperature of 25 degrees when PSM is on', function() {
+    for (var i = 0; i < 6; i++) {
+      thermostat.Up();
+    }
+    expect(thermostat.getCurrentTemperature()).toEqual(25);
   });
 
 });
