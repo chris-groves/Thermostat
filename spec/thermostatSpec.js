@@ -60,4 +60,10 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(32);
   });
 
+  it('can be reset to the default temperature', function() {
+    thermostat.Up();
+    thermostat.Reset();
+    expect(thermostat.getCurrentTemperature()).toEqual(20);
+  });
+
 });

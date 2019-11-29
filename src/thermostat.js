@@ -43,3 +43,7 @@ Thermostat.prototype.switchPowerSavingModeOff = function() {
 Thermostat.prototype.switchPowerSavingModeOn = function() {
   this.powerSavingMode = true;
 };
+
+Thermostat.prototype.Reset = function() {
+  this.temperature = 20;
+};
