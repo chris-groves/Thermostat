@@ -54,5 +54,7 @@ Thermostat.prototype.energyUse = function() {
     return 'low';
   } else if (this.temperature > 17 && this.temperature < 26) {
     return 'medium';
+  } else {
+    return 'high'
   }
 };
