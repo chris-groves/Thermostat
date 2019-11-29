@@ -52,4 +52,12 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(25);
   });
 
+  it('has a maximum temperature of 32 degrees when PSM is off', function() {
+    thermostat.switchPowerSavingModeOff();
+    for (var i = 0; i < 13; i++) {
+      thermostat.Up();
+    }
+    expect(thermostat.getCurrentTemperature()).toEqual(32);
+  });
+
 });
