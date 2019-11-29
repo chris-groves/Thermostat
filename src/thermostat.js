@@ -52,5 +52,7 @@ Thermostat.prototype.Reset = function() {
 Thermostat.prototype.energyUse = function() {
   if (this.temperature < 18) {
     return 'low';
+  } else if (this.temperature > 17 && this.temperature < 26) {
+    return 'medium';
   }
 };

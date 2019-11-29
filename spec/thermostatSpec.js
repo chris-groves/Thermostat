@@ -73,4 +73,8 @@ describe('Thermostat', function() {
     expect(thermostat.energyUse()).toEqual('low');
   })
 
+  it('is considered medium usage when the temperature is betweeb 18 and 25 degrees', function() {
+    expect(thermostat.energyUse()).toEqual('medium');
+  })
+
 });
