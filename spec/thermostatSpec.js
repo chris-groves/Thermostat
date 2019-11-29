@@ -66,4 +66,11 @@ describe('Thermostat', function() {
     expect(thermostat.getCurrentTemperature()).toEqual(20);
   });
 
+  it('is considered low usage when the temperature is below 18 degrees', function() {
+    for (var i = 0; i < 3; i++) {
+      thermostat.Down();
+    }
+    expect(thermostat.energyUse()).toEqual('low');
+  })
+
 });
