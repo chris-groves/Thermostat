@@ -25,17 +25,21 @@
 
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  $('#temperature').text(thermostat.temperature);
+  updateTemperature();
 
   $('#temperature-up').on('click', function() {
     thermostat.Up();
-    $('#temperature').text(thermostat.temperature);
+    updateTemperature();
   })
 
   $('#temperature-down').on('click', function() {
     thermostat.Down();
-    $('#temperature').text(thermostat.temperature);
+    updateTemperature();
   })
+
+  function updateTemperature() {
+    $('#temperature').text(thermostat.temperature);
+  };
 })
 
 </script>
