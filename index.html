@@ -37,6 +37,23 @@ $(document).ready(function() {
     updateTemperature();
   })
 
+  $('#temperature-reset').on('click', function() {
+    thermostat.Reset();
+    updateTemperature();
+  })
+
+  $('#powersaving-on').on('click', function() {
+    thermostat.switchPowerSavingModeOn();
+    $('#power-saving-status').text('on')
+    updateTemperature();
+  })
+
+  $('#powersaving-off').on('click', function() {
+    thermostat.switchPowerSavingModeOff();
+    $('#power-saving-status').text('off')
+    updateTemperature();
+  })
+
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
   };
