@@ -70,11 +70,11 @@ describe('Thermostat', function() {
     for (var i = 0; i < 3; i++) {
       thermostat.Down();
     }
-    expect(thermostat.energyUse()).toEqual('low');
+    expect(thermostat.energyUse()).toEqual('Low');
   })
 
   it('is considered medium usage when the temperature is between 18 and 25 degrees', function() {
-    expect(thermostat.energyUse()).toEqual('medium');
+    expect(thermostat.energyUse()).toEqual('Medium');
   })
 
   it('is considered high usage when the temperature is above 25 degrees', function() {
@@ -82,7 +82,7 @@ describe('Thermostat', function() {
     for (var i = 0; i < 6; i++) {
       thermostat.Up();
     }
-    expect(thermostat.energyUse()).toEqual('high');
+    expect(thermostat.energyUse()).toEqual('High');
   })
 
 });
