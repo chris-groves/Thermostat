@@ -3,7 +3,7 @@
   <head>
     <script src="jquery-3.4.1.js"></script>
     <script src="src/thermostat.js"></script>
-    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <title>Thermostat</title>
   </head>
   <body>
@@ -17,9 +17,9 @@
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
       </p>
-      <p>
+      <!-- <p>
         Energy Use: <span id="energy-use"></span>
-      </p>
+      </p> -->
     </section>
     <script src="src/thermostat.js"></script>
   </body>
@@ -30,47 +30,49 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   updateTemperature();
-  displayEnergyUse();
+  // displayEnergyUse();
 
   $('#temperature-up').on('click', function() {
     thermostat.Up();
     updateTemperature();
-    displayEnergyUse();
+    // displayEnergyUse();
   })
 
   $('#temperature-down').on('click', function() {
     thermostat.Down();
     updateTemperature();
-    displayEnergyUse();
+    // displayEnergyUse();
   })
 
   $('#temperature-reset').on('click', function() {
     thermostat.Reset();
     updateTemperature();
-    displayEnergyUse();
+    // displayEnergyUse();
   })
 
   $('#powersaving-on').on('click', function() {
     thermostat.switchPowerSavingModeOn();
     $('#power-saving-status').text('on')
     updateTemperature();
-    displayEnergyUse();
+    // displayEnergyUse();
   })
 
   $('#powersaving-off').on('click', function() {
     thermostat.switchPowerSavingModeOff();
     $('#power-saving-status').text('off')
     updateTemperature();
-    displayEnergyUse();
+    // displayEnergyUse();
   })
 
-  function displayEnergyUse() {
-    $('#energy-use').text(thermostat.energyUse());
-  };
+  // function displayEnergyUse() {
+  //   $('#energy-use').text(thermostat.energyUse());
+  //   $('#energy-use').attr('class',thermostat.energyUse());
+  // };
 
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature);
-  };
+    $('#temperature').attr('class',thermostat.energyUse());
+  }
 });
 
 </script>
