@@ -21,6 +21,9 @@
         Energy Use: <span id="energy-use"></span>
       </p>
     </section>
+    <section>
+    Current Temperature: <span id="current-temperature"></span>
+    </section>
     <script src="src/thermostat.js"></script>
   </body>
 </html>
@@ -62,6 +65,10 @@ $(document).ready(function() {
     $('#power-saving-status').text('off')
     updateTemperature();
     displayEnergyUse();
+  })
+
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk<YOUR_API_KEY>&units=metric', function(data) {
+    $('#current-temperature').text(data.main.temp);
   })
 
   function displayEnergyUse() {
