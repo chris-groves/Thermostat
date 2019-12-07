@@ -23,6 +23,10 @@
     </section>
     <section>
     Current Temperature: <span id="current-temperature"></span>
+    <form id="select-city">
+      <input id="current-city" type="text" placeholder="Enter a city"></input>
+      <input type="submit"></input>
+    </form>
     </section>
     <script src="src/thermostat.js"></script>
   </body>
@@ -67,8 +71,17 @@ $(document).ready(function() {
     displayEnergyUse();
   })
 
-  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk<YOUR_API_KEY>&units=metric', function(data) {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=London,uk-<YOUR-API-KEY>-&units=metric', function(data) {
     $('#current-temperature').text(data.main.temp);
+  })
+
+  $('#select-city').submit(function(event) {
+    event.preventDefault();
+    var city = $('#current-city').val();
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '<YOUR-API-KEY>', function(data) {
+      $('#current-temperature').text(data.main.temp);
+    })
+
   })
 
   function displayEnergyUse() {
