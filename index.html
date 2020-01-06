@@ -7,20 +7,30 @@
     <script src="src/thermostat.js"></script>
     <script src="src/interface.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css"/>
-    <title>Thermostat</title>
   </head>
   <body>
+    <header style="color: blue;">
+      <h1>Thermostat</h1>
+    </header>
     <section>
-        <h1 style="color: blue;">Thermostat</h1>
         <text>Thermostat Temperature:</text> <text id="temperature"></text>
-      <p>
+    </section>
+    <br>
+    <section>
         <button id="temperature-up">+</button>
         <button id="temperature-down">-</button>
+        <br>
+        <br>
         <button id="temperature-reset">reset</button>
+        <br>
+        <br>
         power saving mode is <span id="power-saving-status">on</span>
+        <br>
+        <br>
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
-      </p>
+    </section>
+
       <p>
         Energy Use: <span id="energy-use"></span>
       </p>
